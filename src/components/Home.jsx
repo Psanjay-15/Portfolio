@@ -1,10 +1,36 @@
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 const Home = () => {
   return (
     <>
-      <div className="bg-gradient-to-br  from-gray-950 via-gray-800 via-30%  to-gray-950 h-screen">
-        <NavBar />
+      <NavBar />
+      <div className="flex flex-col lg:flex-row h-fit">
+        <div className="text-white brder-2 border-white w-full lg:w-[70%] p-[18px] text-center lg:px-10">
+          <div className="m-4 p-6">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-tr from-blue-500 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
+              Sanjay Pandere
+            </h1>
+            <p className="text-[16px] p-[4px] md:text-xl lg:text-xl">
+              I’m a passionate web developer with experience in creating dynamic
+              and responsive websites. Having good experience in different
+              web-development technologies and wanting to contribute to the
+              betterment of society.
+            </p>
+            <Link
+              to="https://drive.google.com/file/d/1CxJafG6HF8D8AP--0yJrnLmuZKHojzCn/view"
+              target="blank"
+            >
+              <button className="mt-6 bg-white text-gray-900 font-semibold py-2 px-4 rounded-md hover:bg-gray-200 transition-colors">
+                Download CV
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="w-full lg:w-[30%] brder-2 border-white"></div>
+      </div>
+      <div className="relative w-full h-1 mt-6">
+        <div className="absolute inset-2 h-full bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
       </div>
     </>
   );

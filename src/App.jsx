@@ -1,13 +1,15 @@
-import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import "./index.css";
+import { OrbitSpace } from "orbit-space";
+import About from "./components/About";
+
 function App() {
   return (
     <>
-      {/* <p className="text-6xl text-center">Hello Sanjay</p> */}
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
+      <OrbitSpace>
+        <Home />
+        <About />
+      </OrbitSpace>
     </>
   );
 }
