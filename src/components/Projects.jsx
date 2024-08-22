@@ -18,13 +18,15 @@ const Projects = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full  h-48  rounded-lg  object-cover"
+              className="w-[100%]  lg:h-[250px]  rounded-lg  object-cover"
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold bg-gradient-to-tr from-blue-500 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-4 text-center lg:text-left">{project.description}</p>
+              <p className="text-gray-300 mb-4 text-center lg:text-left">
+                {project.description}
+              </p>
               <div className="flex gap-4">
                 {project.github && (
                   <Link
