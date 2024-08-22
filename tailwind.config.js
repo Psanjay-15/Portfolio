@@ -8,11 +8,25 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
+        borderColor: {
+          gradient: "linear-gradient(45deg, #F3A7B0, #F0C6C6)", // Example gradient
+        },
       },
       animation: {
         slide: "slide 2s linear infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.border-gradient': {
+            borderImage: 'linear-gradient(45deg, #F3A7B0, #F0C6C6) 1',
+          },
+        },
+        ['responsive', 'hover']
+      )
+    }
+  ],
 };

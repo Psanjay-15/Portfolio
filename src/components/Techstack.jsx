@@ -6,7 +6,7 @@ const Techstack = () => {
       <h2 className="text-3xl font-bold pt-8 text-center lg:text-left mb-4 lg:pl-[50px]">
         Skills
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 gap-6 lg:p-4 p-4 animate-slideIn">
+      <div className="grid grid-cols-2 border-gradient sm:grid-cols-3 lg:grid-cols-8 gap-6 lg:p-4 p-4 animate-slideIn">
         {skills.map((skill, index) => (
           <div
             key={index}
