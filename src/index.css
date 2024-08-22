@@ -2,9 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+}
 
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .w-40 {
+    width: 30%;
+  }
+
+  .h-40 {
+    height: 30%;
+  }
+}
+
+@keyframes shiny-border {
+  0% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.shiny-border {
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.148) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  animation: shiny-border 1.5s infinite;
+}
+
+.shiny-border:hover::before {
+  opacity: 1;
 }

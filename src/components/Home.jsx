@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col lg:flex-row h-fit">
+      <div className="flex flex-col lg:flex-row h-fit lg:my-[80px]">
         <div className="text-white brder-2 border-white w-full lg:w-[70%] p-[18px] text-center lg:px-10">
           <div className="m-4 p-6">
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold bg-gradient-to-tr from-blue-500 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
@@ -29,9 +29,9 @@ const Home = () => {
         </div>
         <div className="w-full lg:w-[30%] brder-2 border-white"></div>
       </div>
-      <div className="relative w-full h-1 mt-6">
-        <div className="absolute inset-2 h-full bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-      </div>
+      {/* <div className="relative w-full h-1 mt-6">
+        <div className="absolute inset-0 z-50 h-full bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+      </div> */}
     </>
   );
 };
