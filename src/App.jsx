@@ -4,6 +4,7 @@ import { OrbitSpace } from "orbit-space";
 import About from "./components/About";
 import Techstack from "./components/Techstack";
 import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <About />
         <Techstack />
         <Projects />
+        <Footer />
       </OrbitSpace>
     </>
   );

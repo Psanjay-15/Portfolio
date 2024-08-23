@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
 
 const Home = () => {
   return (
@@ -19,56 +17,7 @@ const Home = () => {
               web-development technologies and wanting to contribute to the
               betterment of society.
             </p>
-            <div className="flex flex-row justify-center items-center pt-3">
-              <ul className="flex flex-row ">
-                <li className="px-2">
-                  <Link
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                  >
-                    <FaLinkedin size={30} className="text-blue-500" />
-                  </Link>
-                  {/* <img src="" alt="" /> */}
-                </li>
-                <li className="px-2">
-                  <Link
-                    href="https://www.instagram.com/sanjay_pandere26/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaInstagram size={30} className="text-orange-600" />
-                  </Link>
-                  {/* <img src="" alt="" /> */}
-                </li>
-                <li className="px-2">
-                  <Link
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaTwitter size={30} className="text-blue-500" />
-                  </Link>
-                </li>
-                <li className="px-2">
-                  <Link
-                    href="https://www.github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub size={30} className="text-white" />
-                  </Link>
-                </li>
-                <li className="px-2">
-                  <Link
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SiLeetcode size={30} className="text-yellow-500" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+
             <Link
               to="https://drive.google.com/file/d/1CxJafG6HF8D8AP--0yJrnLmuZKHojzCn/view"
               target="blank"
