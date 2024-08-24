@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Pioneered a state-of-the-art real-time code editor for technical interviews with MERN Stack and TypeScript, improving user experience by 35% and increasing interview success rates by 20%. • Enhanced code execution capabilities by integrating Judge0 API, supporting compilation and execution for over 30+ programming languages..",
     image: "/codepad.png",
-    github: "https://github.com/username/project-one",
+    github: "https://github.com/Psanjay-15/Code-Pad-Client",
     deployed: "https://code-pad-client.vercel.app/",
   },
   {
