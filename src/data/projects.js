@@ -10,7 +10,7 @@ export const projects = [
   {
     title: "TripEzz",
     description:
-      "The stour planning website offers a seamless experience for finding and customizing your ideal trip. With features like search by name and country filters, you can easily discover tours that match your interests. Whether seeking adventure or relaxation, our platform helps you effortlessly plan the perfect getaway.It is responsive for multiple deveices",
+      "The tour planning website offers a seamless experience for finding and customizing your ideal trip. With features like search by name and country filters, you can easily discover tours that match your interests. Whether seeking adventure or relaxation, our platform helps you effortlessly plan the perfect getaway.It is responsive for multiple deveices",
     image: "/tripezz.png",
     github: "https://github.com/Psanjay-15/ToursPlanner",
     deployed: "",
