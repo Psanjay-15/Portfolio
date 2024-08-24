@@ -38,22 +38,34 @@ const Footer = () => {
 
         <div className="flex space-x-6">
           <Link to="https://github.com/Psanjay-15" target="_blank">
-            <FaGithub size={30} className="text-gray-white" />
+            <FaGithub
+              size={30}
+              className="text-gray-white hover:scale-125 transition-transform duration-300"
+            />
           </Link>
           <Link
             to="https://www.linkedin.com/in/sanjay-pandere-72379b267/"
             target="_blank"
           >
-            <FaLinkedin size={30} className=" text-blue-500" />
+            <FaLinkedin
+              size={30}
+              className=" text-blue-500 hover:scale-125 transition-transform duration-300"
+            />
           </Link>
           <Link to="https://x.com/sanjaypandere26" target="_blank">
-            <FaTwitter size={30} className="text-blue-400" />
+            <FaTwitter
+              size={30}
+              className="text-blue-400 hover:scale-125 transition-transform duration-300"
+            />
           </Link>
           <Link
             to="https://www.instagram.com/sanjay_pandere26/"
             target="_blank"
           >
-            <FaInstagram size={30} className="text-orange-400" />
+            <FaInstagram
+              size={30}
+              className="text-orange-300 hover:scale-125 transition-transform duration-300"
+            />
           </Link>
         </div>
       </div>
