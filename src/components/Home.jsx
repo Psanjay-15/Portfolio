@@ -18,7 +18,7 @@ const Home = () => {
             </p>
 
             <Link
-              to="https://drive.google.com/file/d/1wBqVYkX0XmHCQo0WiMuh3oVEuIqloZB_/view?usp=sharing"
+              to="https://drive.google.com/file/d/1zPyjR1tY1eia6jbACtecx8tpNzBK8Zvx/view"
               target="blank"
             >
               <button className="mt-6 bg-white text-gray-900 font-semibold lg:font-extrabold lg:text-xl lg:py-3 py-2 px-4 lg:px-8 rounded-md hover:bg-gray-200 transition-colors">

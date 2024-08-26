@@ -44,7 +44,7 @@ const Footer = () => {
             />
           </Link>
           <Link
-            to="https://www.linkedin.com/in/sanjay-pandere-72379b267/"
+            to="https://www.linkedin.com/in/sanjay-pandere84/"
             target="_blank"
           >
             <FaLinkedin
