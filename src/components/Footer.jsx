@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="g-gray-800 text-white pt-8 lg:mx-12">
-      <h2 className="text-3xl font-bold pt-8 text-center lg:text-left lg:pb-10 mb-4 lg:pl-[50px] ">
+    <footer className=" text-white pt-8">
+      <h2 className="text-3xl font-bold pt-8 text-center lg:mx-12 lg:text-left lg:pb-10 mb-4 lg:pl-[50px] ">
         Contact Me
       </h2>
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 lg:mx-12">
         <div className="flex flex-col items-center justify-center md:items-start space-y-4">
           <img
             src="/profile.jpeg"
@@ -69,7 +69,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="text-center mt-8 text-white bg-gray-900 py-2">
+      <div className="text-center mt-8 text-white bg-gray-900 py-2  ">
         <p>
           Made with ❤️ by{"  "}
           <span className="font-semibold bg-gradient-to-tr from-blue-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">
