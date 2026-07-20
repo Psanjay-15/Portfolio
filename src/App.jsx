@@ -1,20 +1,39 @@
 import Home from "./components/Home";
-import "./index.css";
 import About from "./components/About";
 import Techstack from "./components/Techstack";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Experience from "./components/Experience";
 import NavBar from "./components/NavBar";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import styled from "styled-components";
+
+const SiteShell = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+const SkipLink = styled.a`
+  position: fixed;
+  top: -90px;
+  left: 22px;
+  z-index: 1000;
+  padding: 12px 18px;
+  color: white;
+  background: var(--blue);
+  border-radius: 999px;
+  font-weight: 700;
+
+  &:focus { top: 20px; }
+`;
 
 function App() {
   return (
-    <div className="site-shell">
-      <a className="skip-link" href="#main-content">
+    <SiteShell>
+      <GlobalStyles />
+      <SkipLink href="#main-content">
         Skip to content
-      </a>
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="ambient ambient-two" aria-hidden="true" />
+      </SkipLink>
       <NavBar />
       <main id="main-content">
         <Home />
@@ -24,7 +43,7 @@ function App() {
         <Projects />
       </main>
       <Footer />
-    </div>
+    </SiteShell>
   );
 }
 
