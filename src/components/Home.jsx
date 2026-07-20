@@ -43,14 +43,18 @@ const AnimatedBlock = styled.div`
   animation-delay: ${({ $delay = 0 }) => `${$delay}ms`};
 `;
 
-const HeroCopy = styled.div`max-width: 820px;`;
+const HeroCopy = styled.div`
+  max-width: 820px;
+`;
 
 const EyebrowRow = styled(AnimatedBlock)`
   display: flex;
   align-items: center;
   gap: 13px;
   margin-bottom: 30px;
-  font: 500 12px/1 "DM Mono", monospace;
+  font:
+    500 12px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 `;
@@ -89,9 +93,15 @@ const HeroTitle = styled.h1`
   font-weight: 700;
   animation: ${revealUp} 650ms 80ms both cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  @media (max-width: 1060px) { font-size: clamp(58px, 7.7vw, 80px); }
-  @media (max-width: 800px) { font-size: clamp(54px, 12vw, 84px); }
-  @media (max-width: 540px) { font-size: clamp(49px, 14.6vw, 68px); }
+  @media (max-width: 1060px) {
+    font-size: clamp(58px, 7.7vw, 80px);
+  }
+  @media (max-width: 800px) {
+    font-size: clamp(54px, 12vw, 84px);
+  }
+  @media (max-width: 540px) {
+    font-size: clamp(49px, 14.6vw, 68px);
+  }
 `;
 
 const HeroAccent = styled.span`
@@ -108,7 +118,9 @@ const HeroIntro = styled.p`
   font-size: clamp(17px, 1.55vw, 21px);
   line-height: 1.65;
   animation: ${revealUp} 650ms 150ms both cubic-bezier(0.2, 0.8, 0.2, 1);
-  @media (max-width: 540px) { font-size: 16px; }
+  @media (max-width: 540px) {
+    font-size: 16px;
+  }
 `;
 
 const HeroActions = styled.div`
@@ -117,7 +129,9 @@ const HeroActions = styled.div`
   gap: 11px;
   margin-top: 34px;
   animation: ${revealUp} 650ms 220ms both cubic-bezier(0.2, 0.8, 0.2, 1);
-  @media (max-width: 540px) { width: 100%; }
+  @media (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 const ActionButton = styled.a`
@@ -131,9 +145,13 @@ const ActionButton = styled.a`
   border-radius: 999px;
   font-size: 13px;
   font-weight: 800;
-  background: ${({ $primary }) => ($primary ? "var(--ink)" : "rgba(255, 253, 248, 0.7)")};
+  background: ${({ $primary }) =>
+    $primary ? "var(--ink)" : "rgba(255, 253, 248, 0.7)"};
   color: ${({ $primary }) => ($primary ? "white" : "inherit")};
-  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
 
   &:hover {
     transform: translateY(-3px);
@@ -142,7 +160,9 @@ const ActionButton = styled.a`
     border-color: var(--blue);
   }
 
-  @media (max-width: 540px) { width: 100%; }
+  @media (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 const HeroSocials = styled.div`
@@ -150,7 +170,9 @@ const HeroSocials = styled.div`
   gap: 21px;
   margin-top: 25px;
   animation: ${revealUp} 650ms 220ms both cubic-bezier(0.2, 0.8, 0.2, 1);
-  @media (max-width: 540px) { justify-content: center; }
+  @media (max-width: 540px) {
+    justify-content: center;
+  }
 `;
 
 const SocialLink = styled.a`
@@ -158,10 +180,14 @@ const SocialLink = styled.a`
   align-items: center;
   gap: 7px;
   color: #6c6b65;
-  font: 500 12px/1 "DM Mono", monospace;
+  font:
+    500 12px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  &:hover { color: var(--blue); }
+  &:hover {
+    color: var(--blue);
+  }
 `;
 
 const HeroVisual = styled(AnimatedBlock)`
@@ -217,7 +243,9 @@ const PortraitStamp = styled.span`
   color: white;
   background: rgba(21, 21, 21, 0.86);
   border-radius: 999px;
-  font: 500 11px/1 "DM Mono", monospace;
+  font:
+    500 11px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.08em;
 `;
 
@@ -236,11 +264,16 @@ const PortraitDetails = styled.div`
 
 const CaptionLabel = styled.span`
   color: rgba(255, 255, 255, 0.57);
-  font: 500 12px/1.3 "DM Mono", monospace;
+  font:
+    500 12px/1.3 "DM Mono",
+    monospace;
   letter-spacing: 0.1em;
 `;
 
-const CaptionValue = styled.strong`color: white; font-size: 15px;`;
+const CaptionValue = styled.strong`
+  color: white;
+  font-size: 15px;
+`;
 
 const AvailabilityDot = styled.span`
   width: 11px;
@@ -284,15 +317,16 @@ const StatusPulse = styled.span`
 const Metrics = styled.div`
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.6fr;
+  grid-template-columns: minmax(260px, 0.34fr) 1fr;
   margin-top: 60px;
   overflow: hidden;
   border: 1.5px solid var(--ink);
   border-radius: 18px;
   background: var(--white);
 
-  @media (max-width: 800px) { grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 540px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Metric = styled.div`
@@ -303,13 +337,9 @@ const Metric = styled.div`
   padding: 18px 24px;
   border-right: 1px solid var(--line);
 
-  @media (max-width: 540px) {
-    &:nth-child(2) { border-right: 0; }
-    &:nth-child(3) {
-      grid-column: 1 / -1;
-      border-top: 1px solid var(--line);
-      border-right: 0;
-    }
+  @media (max-width: 800px) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
 `;
 
@@ -322,26 +352,54 @@ const MetricValue = styled.strong`
 const MetricLabel = styled.span`
   margin-top: 7px;
   color: #717069;
-  font: 500 12px/1.5 "DM Mono", monospace;
+  font:
+    500 12px/1.5 "DM Mono",
+    monospace;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 `;
 
-const MetricNote = styled.p`
+const MetricNote = styled.div`
   min-height: 92px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 0;
-  padding: 18px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   background: var(--lime);
   color: var(--ink);
-  font: 500 12px/1.5 "DM Mono", monospace;
+  font:
+    600 12px/1.5 "DM Mono",
+    monospace;
   letter-spacing: 0.07em;
-  text-align: right;
+  text-align: center;
   text-transform: uppercase;
-  @media (max-width: 800px) { display: none; }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+const SkillSummaryItem = styled.span`
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+
+  & + & {
+    border-left: 1px solid rgba(21, 21, 21, 0.16);
+  }
+
+  @media (max-width: 600px) {
+    min-height: 70px;
+
+    &:nth-child(3) {
+      border-top: 1px solid rgba(21, 21, 21, 0.16);
+      border-left: 0;
+    }
+
+    &:nth-child(4) {
+      border-top: 1px solid rgba(21, 21, 21, 0.16);
+    }
+  }
 `;
 
 const Home = () => (
@@ -349,7 +407,9 @@ const Home = () => (
     <HeroCopy>
       <EyebrowRow>
         <Eyebrow>Software Engineer</Eyebrow>
-        <Location><FiMapPin /> India</Location>
+        <Location>
+          <FiMapPin /> India
+        </Location>
       </EyebrowRow>
 
       <HeroTitle>
@@ -363,7 +423,9 @@ const Home = () => (
       </HeroIntro>
 
       <HeroActions>
-        <ActionButton $primary href="#work">See selected work <FiArrowDownRight /></ActionButton>
+        <ActionButton $primary href="#work">
+          See selected work <FiArrowDownRight />
+        </ActionButton>
         <ActionButton
           href="https://drive.google.com/file/d/1YQnUbk9gmvkgmCjmqn1Q5xVsbjMwebK9/view?usp=sharing"
           target="_blank"
@@ -381,10 +443,18 @@ const Home = () => (
       </HeroActions>
 
       <HeroSocials aria-label="Social links">
-        <SocialLink href="https://github.com/Psanjay-15" target="_blank" rel="noreferrer">
+        <SocialLink
+          href="https://github.com/Psanjay-15"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FiGithub /> GitHub
         </SocialLink>
-        <SocialLink href="https://www.linkedin.com/in/sanjay-pandere84/" target="_blank" rel="noreferrer">
+        <SocialLink
+          href="https://www.linkedin.com/in/sanjay-pandere84/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FiLinkedin /> LinkedIn
         </SocialLink>
       </HeroSocials>
@@ -402,14 +472,23 @@ const Home = () => (
           <AvailabilityDot aria-label="Available for opportunities" />
         </PortraitCaption>
       </PortraitFrame>
-      <FloatingNote><StatusPulse />Open to backend &amp; applied AI roles</FloatingNote>
+      <FloatingNote>
+        <StatusPulse />
+        Open to backend &amp; applied AI roles
+      </FloatingNote>
     </HeroVisual>
 
     <Metrics>
-      <Metric><MetricValue>1+ yr</MetricValue><MetricLabel>Production engineering</MetricLabel></Metric>
-      <Metric><MetricValue>20+</MetricValue><MetricLabel>Public repositories</MetricLabel></Metric>
-      <Metric><MetricValue>2</MetricValue><MetricLabel>Cloud ecosystems</MetricLabel></Metric>
-      <MetricNote>APIs · RAG pipelines · agents · cloud infrastructure</MetricNote>
+      <Metric>
+        <MetricValue>1+ yr</MetricValue>
+        <MetricLabel>Production engineering</MetricLabel>
+      </Metric>
+      <MetricNote>
+        <SkillSummaryItem>Backend</SkillSummaryItem>
+        <SkillSummaryItem>AI</SkillSummaryItem>
+        <SkillSummaryItem>FullStack</SkillSummaryItem>
+        <SkillSummaryItem>Cloud</SkillSummaryItem>
+      </MetricNote>
     </Metrics>
   </Hero>
 );
