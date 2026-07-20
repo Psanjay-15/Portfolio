@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-cta">
           <span className="card-kicker">HAVE A PROBLEM WORTH SOLVING?</span>
-          <h2>Let&apos;s build something<br /><em>dependable.</em></h2>
+          <h2>Have a difficult<br /><em>idea?</em> Let&apos;s talk.</h2>
           <p>I&apos;m open to software engineering opportunities across backend systems, applied AI, and full-stack product development.</p>
           <a className="button footer-button" href="mailto:panderesanjay26@gmail.com">
             Get in touch <FiArrowUpRight />

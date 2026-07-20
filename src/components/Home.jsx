@@ -19,20 +19,18 @@ const Home = () => {
         </div>
 
         <h1 className="hero-title reveal-up delay-one">
-          Backend systems.
-          <span>Applied AI.</span>
-          Built for production.
+          I build the systems behind
+          <span>intelligent products.</span>
         </h1>
 
         <p className="hero-intro reveal-up delay-two">
-          I&apos;m Sanjay, a software engineer who builds reliable backend
-          platforms, AI-powered products, and cloud-native systems that hold up
-          beyond the demo.
+          Software engineer focused on backend platforms, applied AI, and
+          cloud-native products - from first API to production deployment.
         </p>
 
         <div className="hero-actions reveal-up delay-three">
           <a className="button button-primary" href="#work">
-            Explore my work <FiArrowDownRight />
+            See selected work <FiArrowDownRight />
           </a>
           <a
             className="button button-secondary"
@@ -73,11 +71,8 @@ const Home = () => {
 
       <div className="hero-visual reveal-up delay-two">
         <div className="portrait-frame">
-          <div className="portrait-topline">
-            <span>ENGINEER / 01</span>
-            <span>2026</span>
-          </div>
           <img src="/profile.png" alt="Sanjay Pandere" />
+          <span className="portrait-stamp">SP / 26</span>
           <div className="portrait-caption">
             <div>
               <span className="caption-label">CURRENT FOCUS</span>
@@ -101,15 +96,15 @@ const Home = () => {
           <span>Production engineering</span>
         </div>
         <div className="metric">
-          <strong>3</strong>
-          <span>Cloud &amp; AI projects</span>
+          <strong>20+</strong>
+          <span>Public repositories</span>
         </div>
         <div className="metric">
           <strong>2</strong>
           <span>Cloud ecosystems</span>
         </div>
         <p className="metric-note">
-          From resilient APIs to RAG pipelines and multi-region deployments.
+          APIs · RAG pipelines · agents · cloud infrastructure
         </p>
       </div>
     </section>

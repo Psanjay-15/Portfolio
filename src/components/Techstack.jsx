@@ -11,7 +11,7 @@ const Techstack = () => {
           <span className="section-number">03</span>
           <p>Capabilities</p>
         </div>
-        <h2>A practical toolkit for<br />building complete systems.</h2>
+        <h2>The stack changes.<br />The thinking stays.</h2>
         <p className="heading-note">Selected from production experience and recent AI work.</p>
       </div>
 

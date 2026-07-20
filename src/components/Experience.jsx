@@ -5,22 +5,34 @@ const roles = [
     title: "Software Engineer",
     period: "Jun 2025 - May 2026",
     description:
-      "Owned backend-heavy product features and production infrastructure for a healthcare SaaS platform.",
+      "Owned backend feature delivery and production infrastructure for a healthcare SaaS platform.",
+    bullets: [
+      "Built and shipped backend-heavy features using Node.js, Express.js, MongoDB, and React.js, owning API design, data flow, validation, and UI-backend integration.",
+      "Designed production REST APIs with authentication, authorization, pagination, filtering, validation, and structured error handling.",
+      "Worked on an AI video search and video RAG workflow that ingested videos, extracted transcripts, chunked content, generated embeddings, and stored searchable context in a vector database.",
+      "Built retrieval flows that fetched relevant transcript context, passed grounded context to an LLM, and generated answers with source references.",
+      "Returned relevant video URLs with generated answers so users could open and play the cited source directly.",
+      "Configured multi-region database read replicas, routing reads to the nearest region while writes continued to the primary database.",
+      "Implemented latency-based routing with Azure Front Door so users connected to the nearest deployed backend service.",
+      "Deployed and monitored services across AWS and Azure using ECS, ECR, Azure Container Apps, ACR, Front Door, and Docker.",
+      "Implemented notification and communication workflows using AWS SQS, SES, and Azure communication services for alerts and emails.",
+      "Optimized database queries with indexes and improved response patterns for frequently accessed content and search APIs.",
+      "Automated deployments through CI/CD workflows using GitHub Actions.",
+      "Load-tested backend APIs with Apache JMeter to validate concurrency behavior and identify scalability bottlenecks.",
+    ],
   },
   {
     title: "SDE Intern",
     period: "Oct 2024 - May 2025",
     description:
-      "Built full-stack product workflows, REST endpoints, and deployment integrations across the platform.",
+      "Contributed across product development, API integration, cloud workflows, and production debugging.",
+    bullets: [
+      "Built and improved product features using React.js, Node.js, Express.js, and MongoDB.",
+      "Developed REST API endpoints for product workflows, including request handling, database operations, validation, and frontend integration.",
+      "Assisted with cloud deployment and communication workflows using AWS services, GitHub Actions, and Docker.",
+      "Debugged frontend-backend integration issues by inspecting API responses, logs, environment variables, and deployment configurations.",
+    ],
   },
-];
-
-const highlights = [
-  "Designed REST APIs with authentication, authorization, pagination, filtering, validation, and structured errors.",
-  "Built a video RAG workflow spanning transcripts, chunking, embeddings, vector retrieval, LLM answers, and cited video sources.",
-  "Configured multi-region read replicas and latency-based routing to serve users from the nearest backend region.",
-  "Shipped on AWS and Azure with ECS, ECR, Container Apps, ACR, Front Door, Docker, and GitHub Actions.",
-  "Optimized indexed database queries and load-tested critical APIs with Apache JMeter to uncover scalability bottlenecks.",
 ];
 
 const Experience = () => {
@@ -30,7 +42,7 @@ const Experience = () => {
         <div className="section-heading section-heading-light">
           <span className="section-number">02</span>
           <p>Experience</p>
-          <h2>Shipping systems used<br />in the real world.</h2>
+          <h2>Production work,<br />not practice projects.</h2>
         </div>
 
         <div className="experience-panel">
@@ -40,28 +52,28 @@ const Experience = () => {
               <span className="card-kicker">OCT 2024 - MAY 2026</span>
               <h3>i3 Digital Health</h3>
               <p>Healthcare SaaS · Remote</p>
+              <strong className="company-tenure">1 year 8 months</strong>
             </div>
             <span className="company-location">India · Remote</span>
           </div>
 
-          <div className="role-column">
+          <div className="experience-details">
             {roles.map((role) => (
-              <article className="role" key={role.title}>
-                <div className="role-marker" />
-                <span>{role.period}</span>
-                <h3>{role.title}</h3>
-                <p>{role.description}</p>
+              <article className="experience-role" key={role.title}>
+                <div className="experience-role-header">
+                  <div>
+                    <span>{role.period}</span>
+                    <h3>{role.title}</h3>
+                  </div>
+                  <p>{role.description}</p>
+                </div>
+                <ul>
+                  {role.bullets.map((bullet) => (
+                    <li key={bullet}><FiCheck /><span>{bullet}</span></li>
+                  ))}
+                </ul>
               </article>
             ))}
-          </div>
-
-          <div className="impact-column">
-            <span className="card-kicker">SELECTED IMPACT</span>
-            <ul>
-              {highlights.map((highlight) => (
-                <li key={highlight}><FiCheck /> <span>{highlight}</span></li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

@@ -6,24 +6,19 @@ const About = () => {
       <div className="section-heading">
         <span className="section-number">01</span>
         <p>About</p>
-        <h2>Engineering with intent,<br />not just implementation.</h2>
+        <h2>Product thinking.<br />Systems depth.</h2>
       </div>
 
       <div className="about-grid">
         <div className="about-story">
           <p className="lead-copy">
-            I turn complex product problems into secure, scalable systems - from API
-            design and data models to retrieval pipelines and cloud deployment.
+            I make technically complex products feel simple, reliable, and ready
+            for real users.
           </p>
           <p>
-            My work sits at the intersection of backend engineering and applied AI.
-            I care about the details that make software dependable: clean interfaces,
-            fast queries, observable deployments, grounded AI answers, and thoughtful
-            user-facing integration.
-          </p>
-          <p>
-            I can own backend-heavy features end to end while collaborating comfortably
-            across React frontends, infrastructure, and product workflows.
+            My work covers API architecture, databases, AI retrieval, real-time
+            communication, cloud deployment, and the frontend integration needed
+            to turn those pieces into a complete product.
           </p>
           <a className="text-link" href="mailto:panderesanjay26@gmail.com">
             Tell me what you&apos;re building <FiArrowUpRight />

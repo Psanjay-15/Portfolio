@@ -29,6 +29,7 @@ const NavBar = () => {
           <a href="#experience" onClick={closeMenu}>Experience</a>
           <a href="#skills" onClick={closeMenu}>Skills</a>
           <a href="#work" onClick={closeMenu}>Work</a>
+          <a href="https://github.com/Psanjay-15" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="nav-cta" href="#contact" onClick={closeMenu}>Let&apos;s talk</a>
         </div>
       </nav>
