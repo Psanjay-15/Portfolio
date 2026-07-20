@@ -23,17 +23,16 @@ const SkipLink = styled.a`
   background: var(--blue);
   border-radius: 999px;
   font-weight: 700;
-
-  &:focus { top: 20px; }
+  &:focus {
+    top: 20px;
+  }
 `;
 
 function App() {
   return (
     <SiteShell>
       <GlobalStyles />
-      <SkipLink href="#main-content">
-        Skip to content
-      </SkipLink>
+      <SkipLink href="#main-content">Skip to content</SkipLink>
       <NavBar />
       <main id="main-content">
         <Home />
