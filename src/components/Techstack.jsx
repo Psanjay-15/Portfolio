@@ -1,26 +1,49 @@
-import { skills } from "../data/tech.jsx";
+import { FiCloud, FiCode, FiCpu, FiDatabase, FiLayout } from "react-icons/fi";
+import { skillGroups } from "../data/tech.jsx";
+
+const icons = [FiCode, FiCpu, FiDatabase, FiCloud, FiLayout];
 
 const Techstack = () => {
   return (
-    <div className="order-2 my-10  md:mx-6  lg:mx-12 text-white">
-      <h2 className="text-3xl font-bold pt-8 text-center lg:text-left mb-4 lg:pl-[50px]">
-        Skills
-      </h2>
-      <div className="grid grid-cols-2 border-gradient sm:grid-cols-3 lg:grid-cols-8 gap-6 lg:p-4 p-4 animate-slideIn">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center bg-gray-800 lg:p-4 p-2 rounded-lg shadow-lg transform hover:scale-110 transition-transform duration-300 shiny-border"
-          >
-            <div className="lg:text-5xl text-3xl mb-4">{skill.icon}</div>
-            <p className="lg:text-lg text-base font-semibold">{skill.name}</p>
-          </div>
-        ))}
+    <section className="section container" id="skills">
+      <div className="section-heading section-heading-inline">
+        <div>
+          <span className="section-number">03</span>
+          <p>Capabilities</p>
+        </div>
+        <h2>A practical toolkit for<br />building complete systems.</h2>
+        <p className="heading-note">Selected from production experience and recent AI work.</p>
       </div>
-      <div className="relative w-full h-[1px] my-[50px]">
-        <div className="absolute inset-0 z-50 h-full bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-      </div>{" "}
-    </div>
+
+      <div className="skills-grid">
+        {skillGroups.map((group, index) => {
+          const Icon = icons[index];
+          return (
+            <article className="skill-group" key={group.title}>
+              <div className="skill-group-top">
+                <span>{group.number}</span>
+                <Icon />
+              </div>
+              <h3>{group.title}</h3>
+              <p>{group.description}</p>
+              <div className="skill-pills">
+                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="tool-marquee" aria-label="Highlighted technologies">
+        <span>NODE.JS</span><i />
+        <span>FASTAPI</span><i />
+        <span>LANGGRAPH</span><i />
+        <span>POSTGRESQL</span><i />
+        <span>AWS</span><i />
+        <span>AZURE</span><i />
+        <span>DOCKER</span>
+      </div>
+    </section>
   );
 };
 

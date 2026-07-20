@@ -1,40 +1,32 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGit,
-  FaGithub,
-} from "react-icons/fa";
-
-import {
-  SiTypescript,
-  SiC,
-  SiCplusplus,
-  SiMongodb,
-  SiExpress,
-  SiTailwindcss,
-  SiMysql,
-  SiBootstrap,
-  SiPython,
-} from "react-icons/si";
-
-export const skills = [
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-300" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-  { name: "Express.js", icon: <SiExpress className="text-green-500" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-  { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
-  { name: "Python", icon: <SiPython className="text-yellow-600" /> },
-  { name: "C", icon: <SiC className="text-blue-500" /> },
-  { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-sky-300" /> },
-  { name: "Bootstrap", icon: <SiBootstrap className="text-indigo-700" /> },
-  { name: "GitHub", icon: <FaGithub className="text-white" /> },
-  { name: "Git", icon: <FaGit className="text-red-500" /> },
+export const skillGroups = [
+  {
+    number: "01",
+    title: "Backend",
+    description: "APIs, services, auth, async workloads, and real-time systems.",
+    skills: ["Node.js", "Express.js", "FastAPI", "REST APIs", "WebSockets", "Python", "TypeScript"],
+  },
+  {
+    number: "02",
+    title: "Applied AI",
+    description: "Grounded AI experiences built around robust retrieval and orchestration.",
+    skills: ["LangChain", "LangGraph", "CrewAI", "RAG", "LLMs", "Embeddings", "n8n"],
+  },
+  {
+    number: "03",
+    title: "Data",
+    description: "Operational and vector data stores designed for the access pattern.",
+    skills: ["PostgreSQL", "MongoDB", "Pinecone", "Qdrant", "Indexing", "Vector search"],
+  },
+  {
+    number: "04",
+    title: "Cloud & DevOps",
+    description: "Containerized, automated deployments across two cloud ecosystems.",
+    skills: ["AWS", "Azure", "Docker", "GitHub Actions", "ECS / ECR", "Container Apps", "JMeter"],
+  },
+  {
+    number: "05",
+    title: "Product UI",
+    description: "Enough frontend depth to deliver cohesive end-to-end product features.",
+    skills: ["React.js", "JavaScript", "Tailwind CSS", "HTML / CSS", "API integration"],
+  },
 ];
