@@ -1,4 +1,11 @@
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiCalendar,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiPhone,
+} from "react-icons/fi";
 import styled from "styled-components";
 
 const FooterSection = styled.footer`
@@ -47,6 +54,29 @@ const FooterDescription = styled.p`
   color: #a2a19a;
   font-size: 16px;
   line-height: 1.7;
+`;
+
+const CalendlyLink = styled.a`
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--lime);
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 180ms ease, background 180ms ease;
+
+  svg:last-child { margin-left: 4px; }
+
+  &:hover {
+    transform: translateY(-3px);
+    background: white;
+  }
 `;
 
 const FooterMeta = styled.div`
@@ -155,6 +185,13 @@ const Footer = () => (
           I&apos;m open to software engineering opportunities across backend
           systems, applied AI, and full-stack product development.
         </FooterDescription>
+        <CalendlyLink
+          href="https://calendly.com/panderesanjay26/30min"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FiCalendar /> Schedule a conversation <FiArrowUpRight />
+        </CalendlyLink>
       </FooterCta>
 
       <FooterMeta>
