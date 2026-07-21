@@ -1,6 +1,6 @@
 export const featuredProjects = [
   {
-    title: "Voice Assistant",
+    title: "EstateAgent",
     type: "Agentic AI · Real-time",
     year: "2026",
     description:
@@ -58,7 +58,7 @@ export const featuredProjects = [
       "Combines query rewriting, semantic retrieval, reranking, and contextual synthesis over a local-first Qdrant knowledge store.",
     technologies: ["LangGraph", "Ollama", "Qdrant", "Firecrawl", "PyMuPDF"],
     flow: ["Sources", "Embeddings", "Qdrant", "Answer"],
-    deployed: "https://support-agent-eight.vercel.app/",
+    // deployed: "https://support-agent-eight.vercel.app/",
     github: "https://github.com/Psanjay-15/SupportAi",
     accent: "orange",
   },

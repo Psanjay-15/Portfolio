@@ -13,7 +13,9 @@ const FooterSection = styled.footer`
   color: white;
   background: #161616;
 
-  @media (max-width: 540px) { padding-top: 100px; }
+  @media (max-width: 540px) {
+    padding-top: 100px;
+  }
 `;
 
 const Inner = styled.div`
@@ -26,12 +28,16 @@ const FooterCta = styled.div`
   padding-bottom: 110px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.17);
 
-  @media (max-width: 800px) { padding-bottom: 220px; }
+  @media (max-width: 800px) {
+    padding-bottom: 220px;
+  }
 `;
 
 const CardKicker = styled.span`
   color: #8f8e87;
-  font: 500 12px/1.3 "DM Mono", monospace;
+  font:
+    500 12px/1.3 "DM Mono",
+    monospace;
   letter-spacing: 0.1em;
 `;
 
@@ -43,9 +49,14 @@ const FooterTitle = styled.h2`
   letter-spacing: -0.075em;
   font-weight: 650;
 
-  em { color: var(--lime); font-weight: 600; }
+  em {
+    color: var(--lime);
+    font-weight: 600;
+  }
 
-  @media (max-width: 540px) { font-size: clamp(50px, 15vw, 70px); }
+  @media (max-width: 540px) {
+    font-size: clamp(50px, 15vw, 70px);
+  }
 `;
 
 const FooterDescription = styled.p`
@@ -69,9 +80,13 @@ const CalendlyLink = styled.a`
   background: var(--lime);
   font-size: 13px;
   font-weight: 800;
-  transition: transform 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
 
-  svg:last-child { margin-left: 4px; }
+  svg:last-child {
+    margin-left: 4px;
+  }
 
   &:hover {
     transform: translateY(-3px);
@@ -85,9 +100,13 @@ const FooterMeta = styled.div`
   gap: 50px;
   padding: 52px 0;
 
-  @media (max-width: 800px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  @media (max-width: 540px) { grid-template-columns: 1fr; }
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FooterBrand = styled.a`
@@ -106,7 +125,9 @@ const BrandMark = styled.span`
   border-radius: 50%;
   color: var(--ink);
   background: var(--lime);
-  font: 500 12px/1 "DM Mono", monospace;
+  font:
+    500 12px/1 "DM Mono",
+    monospace;
 `;
 
 const BrandRole = styled.small`
@@ -124,8 +145,12 @@ const LinkList = styled.div`
 const ContactList = styled(LinkList)``;
 
 const SocialList = styled(LinkList)`
-  @media (max-width: 800px) { grid-column: 2; }
-  @media (max-width: 540px) { grid-column: auto; }
+  @media (max-width: 800px) {
+    grid-column: 2;
+  }
+  @media (max-width: 540px) {
+    grid-column: auto;
+  }
 `;
 
 const FooterLink = styled.a`
@@ -135,7 +160,9 @@ const FooterLink = styled.a`
   color: #aaa9a2;
   font-size: 14px;
 
-  &:hover { color: var(--lime); }
+  &:hover {
+    color: var(--lime);
+  }
 `;
 
 const FooterBottom = styled.div`
@@ -144,7 +171,9 @@ const FooterBottom = styled.div`
   padding: 20px 0 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   color: #6f6e68;
-  font: 500 11px/1.5 "DM Mono", monospace;
+  font:
+    500 11px/1.5 "DM Mono",
+    monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 
@@ -161,30 +190,37 @@ const FooterCopy = styled.p`
 const FooterTagline = styled(FooterCopy)`
   text-align: center;
 
-  @media (max-width: 540px) { text-align: left; }
+  @media (max-width: 540px) {
+    text-align: left;
+  }
 `;
 
 const BackToTop = styled.a`
   justify-self: end;
   color: #989790;
 
-  @media (max-width: 540px) { justify-self: start; }
+  @media (max-width: 540px) {
+    justify-self: start;
+  }
 `;
 
 const Footer = () => (
   <FooterSection id="contact">
     <Inner>
       <FooterCta>
-        <CardKicker>HAVE A PROBLEM WORTH SOLVING?</CardKicker>
+        <CardKicker>OPEN TO NEW OPPORTUNITIES</CardKicker>
+
         <FooterTitle>
-          Have a difficult
+          Building a great team?
           <br />
-          <em>idea?</em> Let&apos;s talk.
+          <em>Let&apos;s talk.</em>
         </FooterTitle>
+
         <FooterDescription>
-          I&apos;m open to software engineering opportunities across backend
+          I&apos;m open to software engineering roles focused on backend
           systems, applied AI, and full-stack product development.
         </FooterDescription>
+
         <CalendlyLink
           href="https://calendly.com/panderesanjay26/30min"
           target="_blank"
@@ -214,10 +250,18 @@ const Footer = () => (
         </ContactList>
 
         <SocialList>
-          <FooterLink href="https://github.com/Psanjay-15" target="_blank" rel="noreferrer">
+          <FooterLink
+            href="https://github.com/Psanjay-15"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FiGithub /> GitHub
           </FooterLink>
-          <FooterLink href="https://www.linkedin.com/in/sanjay-pandere84/" target="_blank" rel="noreferrer">
+          <FooterLink
+            href="https://www.linkedin.com/in/sanjay-pandere84/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FiLinkedin /> LinkedIn
           </FooterLink>
         </SocialList>
@@ -225,7 +269,9 @@ const Footer = () => (
 
       <FooterBottom>
         <FooterCopy>© {new Date().getFullYear()} Sanjay Pandere</FooterCopy>
-        <FooterTagline>Designed for clarity. Engineered for impact.</FooterTagline>
+        <FooterTagline>
+          Designed for clarity. Engineered for impact.
+        </FooterTagline>
         <BackToTop href="#home">Back to top ↑</BackToTop>
       </FooterBottom>
     </Inner>
