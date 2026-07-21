@@ -26,7 +26,9 @@ const SectionHeading = styled.div`
   column-gap: 18px;
   margin-bottom: 72px;
 
-  @media (max-width: 1060px) { grid-template-columns: 0.62fr 1.38fr; }
+  @media (max-width: 1060px) {
+    grid-template-columns: 0.62fr 1.38fr;
+  }
 
   @media (max-width: 800px) {
     grid-template-columns: 40px 1fr;
@@ -49,13 +51,17 @@ const HeadingIntro = styled.div`
 const SectionNumber = styled.span`
   padding-top: 5px;
   color: var(--blue);
-  font: 500 13px/1 "DM Mono", monospace;
+  font:
+    500 13px/1 "DM Mono",
+    monospace;
 `;
 
 const SectionLabel = styled.p`
   margin: 0 0 15px;
   color: var(--blue);
-  font: 600 13px/1 "DM Mono", monospace;
+  font:
+    600 13px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 `;
@@ -67,16 +73,24 @@ const SectionTitle = styled.h2`
   letter-spacing: -0.065em;
   font-weight: 650;
 
-  @media (max-width: 800px) { grid-column: 2; }
-  @media (max-width: 540px) { font-size: 40px; }
+  @media (max-width: 800px) {
+    grid-column: 2;
+  }
+  @media (max-width: 540px) {
+    font-size: 40px;
+  }
 `;
 
 const HeadingNote = styled.p`
   margin: 0;
   color: #76756e;
-  font: 500 14px/1.65 "DM Mono", monospace;
+  font:
+    500 14px/1.65 "DM Mono",
+    monospace;
 
-  @media (max-width: 1060px) { display: none; }
+  @media (max-width: 1060px) {
+    display: none;
+  }
 `;
 
 const FeaturedProjects = styled.div`
@@ -131,9 +145,16 @@ const ProjectVisual = styled.div`
   color: ${({ $accent }) => ($accent === "blue" ? "white" : "inherit")};
   background: ${({ $accent }) => accentColors[$accent] || "var(--lime)"};
 
-  @media (max-width: 1060px) { min-height: 440px; }
-  @media (max-width: 800px) { min-height: 460px; order: 0; }
-  @media (max-width: 540px) { min-height: 390px; }
+  @media (max-width: 1060px) {
+    min-height: 440px;
+  }
+  @media (max-width: 800px) {
+    min-height: 460px;
+    order: 0;
+  }
+  @media (max-width: 540px) {
+    min-height: 390px;
+  }
 `;
 
 const VisualBar = styled.div`
@@ -142,7 +163,9 @@ const VisualBar = styled.div`
   justify-content: space-between;
   padding: 17px 20px;
   border-bottom: 1px solid currentColor;
-  font: 500 11px/1 "DM Mono", monospace;
+  font:
+    500 11px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.07em;
 `;
 
@@ -165,11 +188,15 @@ const VisualCenter = styled.div`
   justify-content: center;
   padding: clamp(28px, 5vw, 58px);
 
-  @media (max-width: 540px) { padding: 28px 20px; }
+  @media (max-width: 540px) {
+    padding: 28px 20px;
+  }
 `;
 
 const VisualType = styled.span`
-  font: 500 12px/1 "DM Mono", monospace;
+  font:
+    500 12px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 `;
@@ -182,7 +209,9 @@ const VisualTitle = styled.strong`
   letter-spacing: -0.075em;
   font-weight: 700;
 
-  @media (max-width: 540px) { font-size: 50px; }
+  @media (max-width: 540px) {
+    font-size: 50px;
+  }
 `;
 
 const ProjectFlow = styled.div`
@@ -211,7 +240,9 @@ const FlowStep = styled.span`
 `;
 
 const FlowLabel = styled.b`
-  font: 600 10px/1.35 "DM Mono", monospace;
+  font:
+    600 10px/1.35 "DM Mono",
+    monospace;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 `;
@@ -225,9 +256,13 @@ const FlowArrow = styled.i`
   display: grid;
   place-items: center;
   background: inherit;
-  font: normal 500 11px/1 "DM Mono", monospace;
+  font:
+    normal 500 11px/1 "DM Mono",
+    monospace;
 
-  @media (max-width: 540px) { display: none; }
+  @media (max-width: 540px) {
+    display: none;
+  }
 `;
 
 const VisualFooter = styled(VisualBar)`
@@ -238,7 +273,9 @@ const VisualFooter = styled(VisualBar)`
 const ProjectMain = styled.div`
   padding: ${({ $even }) => ($even ? "28px 0 28px 30px" : "28px 30px 28px 0")};
 
-  @media (max-width: 800px) { padding: 34px 20px 24px; }
+  @media (max-width: 800px) {
+    padding: 34px 20px 24px;
+  }
 `;
 
 const ProjectMetaLine = styled.div`
@@ -250,7 +287,9 @@ const ProjectMetaLine = styled.div`
 
 const ProjectMeta = styled.span`
   color: #68675f;
-  font: 600 11px/1 "DM Mono", monospace;
+  font:
+    600 11px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 `;
@@ -278,7 +317,9 @@ const ProjectDetail = styled.div`
 
 const CardKicker = styled.span`
   color: rgba(21, 21, 21, 0.57);
-  font: 500 12px/1.3 "DM Mono", monospace;
+  font:
+    500 12px/1.3 "DM Mono",
+    monospace;
   letter-spacing: 0.1em;
 `;
 
@@ -301,7 +342,9 @@ const TechPill = styled.span`
   border: 1px solid rgba(21, 21, 21, 0.22);
   border-radius: 999px;
   color: #51514b;
-  font: 500 11px/1 "DM Mono", monospace;
+  font:
+    500 11px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 `;
@@ -324,9 +367,14 @@ const ProjectLink = styled.a`
   background: var(--white);
   font-size: 13px;
   font-weight: 800;
-  transition: background 180ms ease, color 180ms ease;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
 
-  &:hover { color: white; background: var(--blue); }
+  &:hover {
+    color: white;
+    background: var(--blue);
+  }
 `;
 
 const Projects = () => (
@@ -368,14 +416,16 @@ const Projects = () => (
                     {project.flow.map((step, flowIndex) => (
                       <FlowStep key={step}>
                         <FlowLabel>{step}</FlowLabel>
-                        {flowIndex < project.flow.length - 1 && <FlowArrow>→</FlowArrow>}
+                        {flowIndex < project.flow.length - 1 && (
+                          <FlowArrow>→</FlowArrow>
+                        )}
                       </FlowStep>
                     ))}
                   </ProjectFlow>
                 </VisualCenter>
                 <VisualFooter>
                   <span>BUILT / {project.year}</span>
-                  <span>VIEW ↓</span>
+                  {/* <span>VIEW ↓</span> */}
                 </VisualFooter>
               </ProjectVisual>
 
@@ -397,12 +447,20 @@ const Projects = () => (
                 </ProjectTech>
                 <ProjectLinks>
                   {project.deployed && (
-                    <ProjectLink href={project.deployed} target="_blank" rel="noreferrer">
+                    <ProjectLink
+                      href={project.deployed}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Live project <FiArrowUpRight />
                     </ProjectLink>
                   )}
                   {project.github && (
-                    <ProjectLink href={project.github} target="_blank" rel="noreferrer">
+                    <ProjectLink
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Source code <FiGithub />
                     </ProjectLink>
                   )}
