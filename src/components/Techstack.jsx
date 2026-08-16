@@ -1,245 +1,136 @@
-import { FiCloud, FiCode, FiCpu, FiDatabase, FiLayout } from "react-icons/fi";
-import { Fragment } from "react";
 import styled from "styled-components";
 import { skillGroups } from "../data/tech.jsx";
 
-const SkillsSection = styled.section`
+const Section = styled.section`
   width: var(--container);
+  display: grid;
+  grid-template-columns: minmax(170px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(40px, 8vw, 112px);
   margin-inline: auto;
-  padding-top: 140px;
-  padding-bottom: 140px;
+  padding: var(--section-space) 0;
 
-  @media (max-width: 800px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
+  @media (max-width: 760px) { grid-template-columns: 1fr; }
 `;
 
-const SectionHeading = styled.div`
-  display: grid;
-  grid-template-columns: 0.62fr 1.38fr 0.7fr;
-  align-items: end;
-  column-gap: 18px;
-  margin-bottom: 72px;
+const SectionIntro = styled.div``;
 
-  @media (max-width: 1060px) { grid-template-columns: 0.62fr 1.38fr; }
-
-  @media (max-width: 800px) {
-    grid-template-columns: 40px 1fr;
-    margin-bottom: 48px;
-  }
-`;
-
-const HeadingIntro = styled.div`
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  column-gap: 18px;
-  align-self: start;
-
-  @media (max-width: 800px) {
-    grid-column: 1 / -1;
-    grid-template-columns: 40px 1fr;
-  }
-`;
-
-const SectionNumber = styled.span`
-  padding-top: 5px;
-  color: #76746d;
-  font: 500 13px/1 "DM Mono", monospace;
-`;
-
-const SectionLabel = styled.p`
-  margin: 0 0 15px;
-  color: var(--blue);
+const Eyebrow = styled.p`
+  margin: 0;
+  color: var(--accent);
   font: 600 13px/1 "DM Mono", monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 `;
 
-const SectionTitle = styled.h2`
-  margin: 0;
-  font-size: clamp(42px, 5.1vw, 70px);
-  line-height: 1.02;
-  letter-spacing: -0.065em;
-  font-weight: 650;
-
-  @media (max-width: 800px) { grid-column: 2; }
-  @media (max-width: 540px) { font-size: 40px; }
+const SectionNumber = styled.span`
+  display: block;
+  margin-top: 18px;
+  color: var(--subtle);
+  font: 500 12px/1 "DM Mono", monospace;
 `;
 
-const HeadingNote = styled.p`
-  margin: 0;
-  color: #76756e;
-  font: 500 14px/1.65 "DM Mono", monospace;
+const Content = styled.div``;
 
-  @media (max-width: 1060px) { display: none; }
+const Title = styled.h2`
+  max-width: 790px;
+  margin: 0;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.058em;
+  font-weight: 620;
 `;
 
-const SkillsGrid = styled.div`
+const Intro = styled.p`
+  max-width: 650px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+`;
+
+const SkillList = styled.div`
+  margin-top: 62px;
+  border-top: 1px solid var(--line-strong);
+`;
+
+const SkillRow = styled.article`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
+  grid-template-columns: 42px minmax(180px, 0.55fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
 
-  @media (max-width: 800px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 540px) { grid-template-columns: 1fr; }
-`;
-
-const SkillGroup = styled.article`
-  min-height: ${({ $index }) => ($index >= 3 ? "305px" : "345px")};
-  grid-column: span ${({ $index }) => ($index >= 3 ? 3 : 2)};
-  display: flex;
-  flex-direction: column;
-  padding: 27px;
-  border: 1.5px solid var(--ink);
-  border-radius: 22px;
-  color: ${({ $index }) => ($index === 1 ? "white" : "inherit")};
-  background: ${({ $index }) =>
-    ["var(--white)", "var(--blue)", "var(--lime)", "#ffb99f", "var(--lavender)"][$index]};
-  transition: transform 180ms ease, box-shadow 180ms ease;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 7px 7px 0 var(--ink);
-  }
-
-  @media (max-width: 800px) {
-    grid-column: ${({ $index }) => ($index === 4 ? "1 / -1" : "span 1")};
-  }
-
-  @media (max-width: 540px) {
-    grid-column: auto;
-    min-height: 310px;
+  @media (max-width: 700px) {
+    grid-template-columns: 34px 1fr;
   }
 `;
 
-const SkillGroupTop = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: ${({ $light }) =>
-    $light ? "rgba(255, 255, 255, 0.68)" : "rgba(21, 21, 21, 0.58)"};
-  font: 500 11px/1 "DM Mono", monospace;
-
-  svg { font-size: 25px; }
+const SkillNumber = styled.span`
+  padding-top: 5px;
+  color: var(--subtle);
+  font: 500 10px/1 "DM Mono", monospace;
 `;
 
 const SkillTitle = styled.h3`
-  margin: 42px 0 10px;
-  font-size: 30px;
-  letter-spacing: -0.05em;
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.025em;
 `;
 
 const SkillDescription = styled.p`
-  max-width: 370px;
   margin: 0;
-  color: ${({ $light }) =>
-    $light ? "rgba(255, 255, 255, 0.68)" : "#63625d"};
-  font-size: 15px;
-  line-height: 1.65;
+  color: var(--subtle);
+  font-size: 13px;
+  line-height: 1.6;
 `;
 
-const SkillPills = styled.div`
+const SkillNames = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: auto;
-  padding-top: 28px;
+  align-content: flex-start;
+  gap: 7px;
+
+  @media (max-width: 700px) { grid-column: 2; margin-top: 8px; }
 `;
 
-const SkillPill = styled.span`
-  padding: 7px 10px;
-  border: 1px solid ${({ $light }) =>
-    $light ? "rgba(255, 255, 255, 0.34)" : "rgba(21, 21, 21, 0.28)"};
-  border-radius: 999px;
-  font: 500 11px/1 "DM Mono", monospace;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+const SkillName = styled.span`
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font: 500 12px/1 "DM Mono", monospace;
 `;
-
-const ToolMarquee = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 13px;
-  margin-top: 18px;
-  padding: 18px 22px;
-  overflow: hidden;
-  border: 1.5px solid var(--ink);
-  border-radius: 999px;
-  background: var(--ink);
-  color: white;
-  font: 500 11px/1 "DM Mono", monospace;
-  letter-spacing: 0.08em;
-
-  @media (max-width: 800px) {
-    justify-content: flex-start;
-    gap: 28px;
-  }
-`;
-
-const ToolName = styled.span`
-  @media (max-width: 800px) {
-    &:nth-of-type(n + 5) { display: none; }
-  }
-`;
-
-const ToolDot = styled.i`
-  width: 5px;
-  height: 5px;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--lime);
-
-  @media (max-width: 800px) {
-    &:nth-of-type(n + 5) { display: none; }
-  }
-`;
-
-const icons = [FiCode, FiCpu, FiDatabase, FiCloud, FiLayout];
-const tools = ["NODE.JS", "FASTAPI", "LANGGRAPH", "POSTGRESQL", "AWS", "AZURE", "DOCKER"];
 
 const Techstack = () => (
-  <SkillsSection id="skills">
-    <SectionHeading>
-      <HeadingIntro>
-        <SectionNumber>03</SectionNumber>
-        <SectionLabel>Capabilities</SectionLabel>
-      </HeadingIntro>
-      <SectionTitle>The stack changes.<br />The thinking stays.</SectionTitle>
-      <HeadingNote>Selected from production experience and recent AI work.</HeadingNote>
-    </SectionHeading>
-
-    <SkillsGrid>
-      {skillGroups.map((group, index) => {
-        const Icon = icons[index];
-        const light = index === 1;
-        return (
-          <SkillGroup $index={index} key={group.title}>
-            <SkillGroupTop $light={light}>
-              <span>{group.number}</span>
-              <Icon />
-            </SkillGroupTop>
-            <SkillTitle>{group.title}</SkillTitle>
-            <SkillDescription $light={light}>{group.description}</SkillDescription>
-            <SkillPills>
+  <Section id="skills">
+    <SectionIntro>
+      <Eyebrow>Capabilities</Eyebrow>
+      <SectionNumber>03 / 04</SectionNumber>
+    </SectionIntro>
+    <Content>
+      <Title>Tools change. Engineering judgment compounds.</Title>
+      <Intro>
+        I choose technologies around the system&apos;s constraints, then learn the
+        operational details required to make the result dependable.
+      </Intro>
+      <SkillList>
+        {skillGroups.map((group) => (
+          <SkillRow key={group.title}>
+            <SkillNumber>{group.number}</SkillNumber>
+            <div>
+              <SkillTitle>{group.title}</SkillTitle>
+              <SkillDescription>{group.description}</SkillDescription>
+            </div>
+            <SkillNames>
               {group.skills.map((skill) => (
-                <SkillPill $light={light} key={skill}>{skill}</SkillPill>
+                <SkillName key={skill}>{skill}</SkillName>
               ))}
-            </SkillPills>
-          </SkillGroup>
-        );
-      })}
-    </SkillsGrid>
-
-    <ToolMarquee aria-label="Highlighted technologies">
-      {tools.map((tool, index) => (
-        <Fragment key={tool}>
-          <ToolName>{tool}</ToolName>
-          {index < tools.length - 1 && <ToolDot />}
-        </Fragment>
-      ))}
-    </ToolMarquee>
-  </SkillsSection>
+            </SkillNames>
+          </SkillRow>
+        ))}
+      </SkillList>
+    </Content>
+  </Section>
 );
 
 export default Techstack;

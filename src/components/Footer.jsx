@@ -1,21 +1,9 @@
-import {
-  FiArrowUpRight,
-  FiCalendar,
-  FiGithub,
-  FiLinkedin,
-  FiMail,
-  FiPhone,
-} from "react-icons/fi";
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import styled from "styled-components";
 
 const FooterSection = styled.footer`
-  padding-top: 135px;
-  color: white;
-  background: #161616;
-
-  @media (max-width: 540px) {
-    padding-top: 100px;
-  }
+  border-top: 1px solid var(--line);
+  background: var(--background);
 `;
 
 const Inner = styled.div`
@@ -24,255 +12,149 @@ const Inner = styled.div`
 `;
 
 const FooterCta = styled.div`
-  position: relative;
-  padding-bottom: 110px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 44px;
+  align-items: end;
+  padding: clamp(86px, 10vw, 132px) 0;
+  border-bottom: 1px solid var(--line);
 
-  @media (max-width: 800px) {
-    padding-bottom: 220px;
-  }
+  @media (max-width: 760px) { grid-template-columns: 1fr; align-items: start; }
 `;
 
-const CardKicker = styled.span`
-  color: #8f8e87;
-  font:
-    500 12px/1.3 "DM Mono",
-    monospace;
+const Kicker = styled.span`
+  color: var(--accent);
+  font: 500 10px/1.4 "DM Mono", monospace;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 `;
 
 const FooterTitle = styled.h2`
-  max-width: 930px;
-  margin: 24px 0 28px;
-  font-size: clamp(58px, 8vw, 108px);
-  line-height: 0.93;
-  letter-spacing: -0.075em;
-  font-weight: 650;
-
-  em {
-    color: var(--lime);
-    font-weight: 600;
-  }
-
-  @media (max-width: 540px) {
-    font-size: clamp(50px, 15vw, 70px);
-  }
+  max-width: 770px;
+  margin: 20px 0 22px;
+  font-size: clamp(46px, 6.5vw, 84px);
+  line-height: 1.03;
+  letter-spacing: -0.065em;
+  font-weight: 620;
 `;
 
 const FooterDescription = styled.p`
-  max-width: 610px;
+  max-width: 600px;
   margin: 0;
-  color: #a2a19a;
-  font-size: 16px;
-  line-height: 1.7;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.72;
 `;
 
-const CalendlyLink = styled.a`
-  min-height: 48px;
+const ContactButton = styled.a`
+  min-height: 49px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 30px;
-  padding: 0 18px;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: 999px;
-  color: var(--ink);
-  background: var(--lime);
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--accent-ink);
+  background: var(--accent);
   font-size: 13px;
-  font-weight: 800;
-  transition:
-    transform 180ms ease,
-    background 180ms ease;
+  font-weight: 700;
+  transition: transform 160ms ease;
 
-  svg:last-child {
-    margin-left: 4px;
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    background: white;
-  }
+  &:hover { transform: translateY(-2px); }
 `;
 
 const FooterMeta = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 0.7fr;
-  gap: 50px;
-  padding: 52px 0;
+  grid-template-columns: 1fr auto auto;
+  gap: 34px;
+  align-items: center;
+  padding: 34px 0;
 
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: 540px) {
-    grid-template-columns: 1fr;
-  }
+  @media (max-width: 700px) { grid-template-columns: 1fr; align-items: start; }
 `;
 
-const FooterBrand = styled.a`
+const Brand = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  gap: 11px;
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 const BrandMark = styled.span`
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  color: var(--ink);
-  background: var(--lime);
-  font:
-    500 12px/1 "DM Mono",
-    monospace;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  color: var(--accent);
+  background: var(--surface);
+  font: 500 11px/1 "DM Mono", monospace;
 `;
 
-const BrandRole = styled.small`
-  color: #77766f;
-  font-size: 12px;
-  font-weight: 500;
-`;
-
-const LinkList = styled.div`
+const LinkGroup = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-`;
-
-const ContactList = styled(LinkList)``;
-
-const SocialList = styled(LinkList)`
-  @media (max-width: 800px) {
-    grid-column: 2;
-  }
-  @media (max-width: 540px) {
-    grid-column: auto;
-  }
+  flex-wrap: wrap;
+  gap: 18px;
 `;
 
 const FooterLink = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #aaa9a2;
-  font-size: 14px;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 12px;
 
-  &:hover {
-    color: var(--lime);
-  }
+  &:hover { color: var(--text); }
 `;
 
 const FooterBottom = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   padding: 20px 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  color: #6f6e68;
-  font:
-    500 11px/1.5 "DM Mono",
-    monospace;
+  border-top: 1px solid var(--line);
+  color: var(--subtle);
+  font: 500 10px/1.5 "DM Mono", monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 
-  @media (max-width: 540px) {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-`;
-
-const FooterCopy = styled.p`
-  margin: 0;
-`;
-
-const FooterTagline = styled(FooterCopy)`
-  text-align: center;
-
-  @media (max-width: 540px) {
-    text-align: left;
-  }
-`;
-
-const BackToTop = styled.a`
-  justify-self: end;
-  color: #989790;
-
-  @media (max-width: 540px) {
-    justify-self: start;
-  }
+  @media (max-width: 540px) { align-items: flex-start; flex-direction: column; }
 `;
 
 const Footer = () => (
   <FooterSection id="contact">
     <Inner>
       <FooterCta>
-        <CardKicker>OPEN TO NEW OPPORTUNITIES</CardKicker>
-
-        <FooterTitle>
-          Building a great team?
-          <br />
-          <em>Let&apos;s talk.</em>
-        </FooterTitle>
-
-        <FooterDescription>
-          I&apos;m open to software engineering roles focused on backend
-          systems, applied AI, and full-stack product development.
-        </FooterDescription>
-
-        <CalendlyLink
-          href="https://calendly.com/panderesanjay26/30min"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FiCalendar /> Schedule a conversation <FiArrowUpRight />
-        </CalendlyLink>
+        <div>
+          <Kicker>Open to software engineering opportunities</Kicker>
+          <FooterTitle>Have a system worth building?</FooterTitle>
+          <FooterDescription>
+            I&apos;m interested in software engineering roles where I can work
+            across product features, system design, intelligent workflows, and
+            cloud delivery to turn complex problems into dependable products.
+          </FooterDescription>
+        </div>
+        <ContactButton href="https://calendly.com/panderesanjay26/30min" target="_blank" rel="noreferrer">
+          Schedule a conversation <FiArrowUpRight />
+        </ContactButton>
       </FooterCta>
 
       <FooterMeta>
-        <FooterBrand href="#home">
-          <BrandMark>SP</BrandMark>
-          <span>
-            Sanjay Pandere
-            <br />
-            <BrandRole>Software Engineer</BrandRole>
-          </span>
-        </FooterBrand>
-
-        <ContactList>
-          <FooterLink href="mailto:panderesanjay26@gmail.com">
-            <FiMail /> panderesanjay26@gmail.com
-          </FooterLink>
-          <FooterLink href="tel:+917666713672">
-            <FiPhone /> +91 76667 13672
-          </FooterLink>
-        </ContactList>
-
-        <SocialList>
-          <FooterLink
-            href="https://github.com/Psanjay-15"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiGithub /> GitHub
-          </FooterLink>
-          <FooterLink
-            href="https://www.linkedin.com/in/sanjay-pandere84/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiLinkedin /> LinkedIn
-          </FooterLink>
-        </SocialList>
+        <Brand href="#home"><BrandMark>SP</BrandMark> Sanjay Pandere</Brand>
+        <LinkGroup>
+          <FooterLink href="mailto:panderesanjay26@gmail.com"><FiMail /> Email</FooterLink>
+          <FooterLink href="https://github.com/Psanjay-15" target="_blank" rel="noreferrer"><FiGithub /> GitHub</FooterLink>
+          <FooterLink href="https://www.linkedin.com/in/sanjay-pandere84/" target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn</FooterLink>
+        </LinkGroup>
       </FooterMeta>
 
       <FooterBottom>
-        <FooterCopy>© {new Date().getFullYear()} Sanjay Pandere</FooterCopy>
-        <FooterTagline>
-          Designed for clarity. Engineered for impact.
-        </FooterTagline>
-        <BackToTop href="#home">Back to top ↑</BackToTop>
+        <span>© {new Date().getFullYear()} Sanjay Pandere</span>
+        <span>Built with React · Designed for clarity</span>
       </FooterBottom>
     </Inner>
   </FooterSection>

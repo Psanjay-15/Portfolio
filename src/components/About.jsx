@@ -1,256 +1,259 @@
-import {
-  FiArrowUpRight,
-  FiBookOpen,
-  FiCrosshair,
-  FiLayers,
-} from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
-const AboutSection = styled.section`
+const Section = styled.section`
   width: var(--container);
-  margin-inline: auto;
-  padding-top: 140px;
-  padding-bottom: 140px;
-
-  @media (max-width: 800px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-`;
-
-const SectionHeading = styled.div`
   display: grid;
-  grid-template-columns: 52px 1fr;
-  column-gap: 18px;
-  margin-bottom: 72px;
+  grid-template-columns: minmax(170px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(40px, 8vw, 112px);
+  margin-inline: auto;
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--line);
 
-  @media (max-width: 800px) {
-    grid-template-columns: 40px 1fr;
-    margin-bottom: 48px;
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
   }
 `;
 
-const SectionNumber = styled.span`
-  grid-row: 1 / 3;
-  padding-top: 5px;
-  color: #76746d;
-  font: 500 13px/1 "DM Mono", monospace;
-`;
+const SectionIntro = styled.div``;
 
-const SectionLabel = styled.p`
-  margin: 0 0 15px;
-  color: var(--blue);
-  font: 600 13px/1 "DM Mono", monospace;
+const Eyebrow = styled.p`
+  margin: 0;
+  color: var(--accent);
+  font:
+    600 13px/1 "DM Mono",
+    monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 `;
 
-const SectionTitle = styled.h2`
-  grid-column: 2;
+const SectionNumber = styled.span`
+  display: block;
+  margin-top: 18px;
+  color: var(--subtle);
+  font:
+    500 12px/1 "DM Mono",
+    monospace;
+`;
+
+const Content = styled.div``;
+
+const Title = styled.h2`
+  max-width: 870px;
   margin: 0;
-  font-size: clamp(42px, 5.1vw, 70px);
-  line-height: 1.02;
-  letter-spacing: -0.065em;
-  font-weight: 650;
-
-  @media (max-width: 540px) {
-    font-size: 40px;
-  }
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.058em;
+  font-weight: 620;
 `;
 
-const AboutGrid = styled.div`
+const StoryGrid = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(52px, 8vw, 118px);
-  padding-left: 70px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
+  gap: clamp(44px, 7vw, 92px);
+  margin-top: 62px;
 
-  @media (max-width: 1060px) {
-    gap: 45px;
-  }
-
-  @media (max-width: 800px) {
+  @media (max-width: 820px) {
     grid-template-columns: 1fr;
-    padding-left: 0;
   }
 `;
 
-const AboutStory = styled.div`
-  color: #595953;
-  font-size: 17px;
+const Story = styled.div`
+  color: var(--muted);
+  font-size: 16px;
   line-height: 1.8;
 
   p {
-    margin: 0 0 24px;
+    margin: 0 0 20px;
   }
-
-  @media (max-width: 800px) {
-    padding-left: 40px;
-  }
-
-  @media (max-width: 540px) {
-    padding-left: 0;
-  }
-`;
-
-const LeadCopy = styled.p`
-  color: var(--ink);
-  font-size: clamp(24px, 2.6vw, 37px);
-  line-height: 1.35;
-  letter-spacing: -0.045em;
-  font-weight: 600;
 `;
 
 const TextLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 12px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid var(--blue);
-  font-size: 15px;
-  font-weight: 800;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+
+  &:hover {
+    color: var(--accent);
+  }
 `;
 
-const AboutCards = styled.div`
+const Principles = styled.div`
+  border-top: 1px solid var(--line-strong);
+`;
+
+const Principle = styled.article`
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 42px 1fr;
   gap: 14px;
-
-  @media (max-width: 540px) {
-    grid-template-columns: 1fr;
-  }
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
 `;
 
-const InfoCard = styled.article`
-  min-height: ${({ $accent }) => ($accent ? "310px" : "270px")};
-  grid-column: ${({ $accent }) => ($accent ? "1 / -1" : "auto")};
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 28px;
-  border: 1.5px solid var(--ink);
-  border-radius: 24px;
-  color: ${({ $accent }) => ($accent ? "white" : "inherit")};
-  background: ${({ $accent, $education }) =>
-    $accent ? "var(--blue)" : $education ? "#ffbb9f" : "var(--lime)"};
-  box-shadow: 7px 7px 0 var(--ink);
-
-  @media (max-width: 540px) {
-    grid-column: auto;
-  }
+const PrincipleNumber = styled.span`
+  padding-top: 3px;
+  color: var(--subtle);
+  font:
+    500 10px/1 "DM Mono",
+    monospace;
 `;
 
-const InfoIcon = styled.div`
-  margin-bottom: auto;
-  font-size: 28px;
+const PrincipleTitle = styled.h3`
+  margin: 0 0 8px;
+  font-size: 17px;
+  letter-spacing: -0.02em;
 `;
 
-const CardKicker = styled.span`
-  color: ${({ $light }) =>
-    $light ? "rgba(255, 255, 255, 0.7)" : "rgba(21, 21, 21, 0.57)"};
-  font: 500 12px/1.3 "DM Mono", monospace;
-  letter-spacing: 0.1em;
-`;
-
-const CardTitle = styled.h3`
-  margin: 17px 0 10px;
-  font-size: 24px;
-  line-height: 1.2;
-  letter-spacing: -0.045em;
-`;
-
-const CardText = styled.p`
+const PrincipleText = styled.p`
   margin: 0;
-  color: ${({ $light }) => ($light ? "white" : "#585852")};
-  font-size: 15px;
+  color: var(--muted);
+  font-size: 14px;
   line-height: 1.65;
 `;
 
-const TagRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 20px;
+const Education = styled.article`
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) auto;
+  gap: 30px;
+  align-items: center;
+  margin-top: 48px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 `;
 
-const Tag = styled.span`
-  padding: 7px 10px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  font: 500 11px/1 "DM Mono", monospace;
-  letter-spacing: 0.04em;
+const EducationLabel = styled.span`
+  color: var(--subtle);
+  font:
+    500 10px/1.5 "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 `;
 
-const EducationScore = styled.strong`
-  margin-top: 18px;
-  font: 600 14px/1 "DM Mono", monospace;
+const EducationText = styled.p`
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+
+  strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: clamp(21px, 2.4vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
 `;
 
+const EducationScore = styled.div`
+  min-width: 110px;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+  text-align: right;
+
+  strong {
+    display: block;
+    font-size: 25px;
+    letter-spacing: -0.04em;
+  }
+
+  span {
+    display: block;
+    margin-top: 7px;
+    color: var(--subtle);
+    font:
+      500 10px/1 "DM Mono",
+      monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 680px) {
+    padding-top: 18px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+    text-align: left;
+  }
+`;
+
+const focusAreas = [
+  {
+    title: "Product foundations",
+    text: "Clear interfaces, reliable APIs, thoughtful data models, authorization, and real-time services give every feature a dependable base.",
+  },
+  {
+    title: "Intelligent workflows",
+    text: "When AI fits the problem, I build RAG and agent workflows around grounding, explicit controls, human review, and observable decisions.",
+  },
+  {
+    title: "End-to-end delivery",
+    text: "I can carry a feature across React interfaces, backend services, Docker, CI/CD, and production deployment on AWS or Azure.",
+  },
+];
+
 const About = () => (
-  <AboutSection id="about">
-    <SectionHeading>
-      <SectionNumber>01</SectionNumber>
-      <SectionLabel>About</SectionLabel>
-      <SectionTitle>
-        Product thinking.
-        <br />
-        Systems depth.
-      </SectionTitle>
-    </SectionHeading>
-
-    <AboutGrid>
-      <AboutStory>
-        <LeadCopy>
-          I make technically complex products feel simple, reliable, and ready
-          for real users.
-        </LeadCopy>
-        <p>
-          My work covers API architecture, databases, AI retrieval, real-time
-          communication, cloud deployment, and the frontend integration needed
-          to turn those pieces into a complete product.
-        </p>
-        <TextLink href="mailto:panderesanjay26@gmail.com">
-          Tell me what you&apos;re building <FiArrowUpRight />
-        </TextLink>
-      </AboutStory>
-
-      <AboutCards>
-        <InfoCard $accent>
-          <InfoIcon><FiCrosshair /></InfoIcon>
-          <CardKicker $light>CURRENT DIRECTION</CardKicker>
-          <CardTitle>Reliable AI, beyond the prototype</CardTitle>
-          <CardText $light>
-            Building production-ready RAG, agentic, and AI search workflows on
-            dependable backend foundations.
-          </CardText>
-          <TagRow>
-            <Tag>RAG</Tag>
-            <Tag>Agents</Tag>
-            <Tag>Vector search</Tag>
-          </TagRow>
-        </InfoCard>
-
-        <InfoCard>
-          <InfoIcon><FiLayers /></InfoIcon>
-          <CardKicker>HOW I WORK</CardKicker>
-          <CardTitle>System-first thinking</CardTitle>
-          <CardText>
-            Design the interfaces, data flow, failure paths, and deployment
-            story before adding unnecessary complexity.
-          </CardText>
-        </InfoCard>
-
-        <InfoCard $education>
-          <InfoIcon><FiBookOpen /></InfoIcon>
-          <CardKicker>EDUCATION</CardKicker>
-          <CardTitle>B.Tech. Computer Engineering</CardTitle>
-          <CardText>Pillai College of Engineering · 2025</CardText>
-          <EducationScore>8.85 CGPI</EducationScore>
-        </InfoCard>
-      </AboutCards>
-    </AboutGrid>
-  </AboutSection>
+  <Section id="about">
+    <SectionIntro>
+      <Eyebrow>About</Eyebrow>
+      <SectionNumber>01 / 04</SectionNumber>
+    </SectionIntro>
+    <Content>
+      <Title>I understand products by building across the entire stack.</Title>
+      <StoryGrid>
+        <Story>
+          <p>
+            My work spans product interfaces, APIs, databases, real-time
+            communication, and cloud infrastructure. Working across those
+            layers helps me understand a feature as one complete system—not a
+            collection of disconnected parts.
+          </p>
+          <p>
+            Applied AI is part of that toolkit. I use retrieval and agentic
+            workflows when they solve a real product problem, supported by the
+            software engineering needed to make them reliable in production.
+          </p>
+          <TextLink href="mailto:panderesanjay26@gmail.com">
+            Tell me what you&apos;re building <FiArrowUpRight />
+          </TextLink>
+        </Story>
+        <Principles>
+          {focusAreas.map((focusArea, index) => (
+            <Principle key={focusArea.title}>
+              <PrincipleNumber>0{index + 1}</PrincipleNumber>
+              <div>
+                <PrincipleTitle>{focusArea.title}</PrincipleTitle>
+                <PrincipleText>{focusArea.text}</PrincipleText>
+              </div>
+            </Principle>
+          ))}
+        </Principles>
+      </StoryGrid>
+      <Education>
+        <EducationLabel>Education</EducationLabel>
+        <EducationText>
+          <strong>B.Tech in Computer Engineering</strong>
+          Pillai College of Engineering · Graduated 2025
+        </EducationText>
+        <EducationScore>
+          <strong>8.85 / 10</strong>
+          <span>CGPA</span>
+        </EducationScore>
+      </Education>
+    </Content>
+  </Section>
 );
 
 export default About;

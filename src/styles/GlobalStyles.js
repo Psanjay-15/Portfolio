@@ -3,20 +3,22 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   :root {
     font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #151515;
-    background: #f3f0e8;
+    color: #f2f3ef;
+    background: #0a0b0d;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
-    --ink: #151515;
-    --paper: #f3f0e8;
-    --white: #fffdf8;
-    --muted: #68675f;
-    --line: rgba(21, 21, 21, 0.17);
-    --blue: #2455ff;
-    --lime: #c8ff4d;
-    --coral: #ff6846;
-    --lavender: #c7b7ff;
-    --container: min(1220px, calc(100vw - 56px));
+    --background: #0a0b0d;
+    --surface: #111318;
+    --surface-raised: #16191f;
+    --text: #f2f3ef;
+    --muted: #9a9da6;
+    --subtle: #6f737c;
+    --line: rgba(255, 255, 255, 0.11);
+    --line-strong: rgba(255, 255, 255, 0.2);
+    --accent: #c2ccc0;
+    --accent-ink: #111410;
+    --container: min(1160px, calc(100vw - 48px));
+    --section-space: clamp(96px, 11vw, 148px);
   }
 
   * { box-sizing: border-box; }
@@ -32,13 +34,13 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
     background:
-      radial-gradient(circle at 95% 4%, rgba(36, 85, 255, 0.09), transparent 24rem),
-      var(--paper);
+      radial-gradient(circle at 80% 0%, rgba(194, 204, 192, 0.055), transparent 31rem),
+      var(--background);
   }
 
-  body::selection {
-    color: white;
-    background: var(--blue);
+  ::selection {
+    color: var(--accent-ink);
+    background: var(--accent);
   }
 
   a {
@@ -47,10 +49,20 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   button, a { -webkit-tap-highlight-color: transparent; }
+  button, input, textarea, select { font: inherit; }
+  button { cursor: pointer; }
   img { display: block; max-width: 100%; }
 
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
   @media (max-width: 800px) {
-    :root { --container: min(100% - 32px, 700px); }
+    :root {
+      --container: min(100% - 32px, 700px);
+      --section-space: 96px;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

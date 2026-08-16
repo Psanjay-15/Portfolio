@@ -1,12 +1,12 @@
 export const featuredProjects = [
   {
-    title: "EstateAgent",
+    title: "EstateVoice",
     type: "Agentic AI · Real-time",
     year: "2026",
     description:
       "A low-latency voice agent for real-estate lead qualification that listens, reasons, verifies users, books meetings, and follows up automatically.",
     impact:
-      "Streams microphone audio over WebSockets and turns LLM output into smaller TTS chunks, keeping the first spoken response fast and conversations natural.",
+      "Streams microphone audio over WebSockets and converts LLM output into smaller TTS chunks so spoken responses begin before the full answer is ready.",
     technologies: [
       "FastAPI",
       "LangGraph",
@@ -17,79 +17,76 @@ export const featuredProjects = [
     flow: ["Voice", "STT", "Agent", "TTS"],
     deployed: "https://voice-agent-frontend-tau.vercel.app/",
     github: "https://github.com/Psanjay-15/VoiceAgent-Backend",
-    accent: "lime",
   },
+  {
+    title: "ActionGate",
+    type: "AI governance · Platform",
+    year: "2026",
+    description:
+      "A policy enforcement and human-approval layer that controls sensitive AI-agent actions before they create real-world side effects.",
+    impact:
+      "Separates AI reasoning from authorization through deterministic Allow, Block, and Require Approval decisions, immutable policy versions, durable resume checkpoints, and auditable traces.",
+    technologies: [
+      "Python SDK",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "React",
+      "Docker",
+    ],
+    flow: ["Intercept", "Evaluate", "Approve", "Resume"],
+    demo: "https://drive.google.com/file/d/1IzqSWS8qUEXPuWgyUFwbI3Pnbpltjqi5/view",
+    github: "https://github.com/Psanjay-15/ActionGate-Backend",
+  },
+
   {
     title: "AI Catalog Generator",
     type: "Generative AI · Full stack",
     year: "2026",
     description:
-      "Turns raw product copy and uploaded documents into editable, single-page catalogs with structured content and print-ready exports.",
+      "Turns product copy and uploaded PDF, DOCX, or TXT files into editable catalogs with structured content and print-ready exports.",
     impact:
-      "Runs an asynchronous, provider-agnostic generation pipeline with typed outputs, HTML sanitization, persistent jobs, and synchronized PDF re-rendering.",
+      "Uses asynchronous jobs, provider-agnostic LLM integration, validated structured outputs, persistent data, and synchronized PDF rendering.",
     technologies: ["Python", "FastAPI", "React", "MongoDB", "Playwright"],
     flow: ["Upload", "LLM schema", "HTML", "PDF"],
     deployed: "https://catalogue-frontend-one.vercel.app/",
     github: "https://github.com/Psanjay-15/Catalogue-Backend",
-    accent: "blue",
   },
   {
     title: "Waypoint",
     type: "Grounded AI · Product system",
     year: "2026",
     description:
-      "An interstate relocation product that brings state comparisons, cost estimates, move planning, local discovery, and a grounded AI assistant into one cohesive experience.",
+      "An interstate relocation product combining state comparisons, cost estimates, planning, local discovery, and a grounded AI assistant.",
     impact:
-      "Pairs MongoDB-backed state data with deterministic domain logic and context-aware AI answers, while frontend fallbacks keep critical product flows resilient.",
-    technologies: ["FastAPI", "React 19", "MongoDB", "OpenAI", "Leaflet"],
-    flow: ["State data", "Grounding", "AI answer", "Plan"],
+      "Pairs MongoDB-backed state data with deterministic domain logic and context-aware answers, with frontend fallbacks for critical flows.",
+    technologies: ["FastAPI", "React", "MongoDB", "OpenAI", "Leaflet"],
+    flow: ["State data", "Grounding", "Answer", "Plan"],
     deployed: "https://waypoint-frontend-zeta.vercel.app/",
     github: "https://github.com/Psanjay-15/Waypoint-Backend",
-    accent: "violet",
   },
-
   {
     title: "Support-AI",
     type: "RAG · Knowledge systems",
     year: "2026",
     description:
-      "An end-to-end support agent that ingests websites and PDFs, builds a searchable knowledge base, and answers product questions with relevant context.",
+      "A support agent that ingests websites and PDFs, builds a searchable knowledge base, and answers product questions with relevant context.",
     impact:
       "Combines query rewriting, semantic retrieval, reranking, and contextual synthesis over a local-first Qdrant knowledge store.",
     technologies: ["LangGraph", "Ollama", "Qdrant", "Firecrawl", "PyMuPDF"],
     flow: ["Sources", "Embeddings", "Qdrant", "Answer"],
-    // deployed: "https://support-agent-eight.vercel.app/",
     github: "https://github.com/Psanjay-15/SupportAi",
-    accent: "orange",
   },
   {
     title: "Slack Standup Bot",
-    type: "Workflow automation · AI summaries",
+    type: "Workflow automation · AI",
     year: "2026",
     description:
-      "A Slack bot that automates daily standups by messaging team members, collecting their updates, and publishing an AI-generated summary to a shared channel.",
+      "A Slack bot that messages team members, collects daily updates, and publishes an AI-generated summary to a shared channel.",
     impact:
-      "Connects scheduled Slack conversations, persistent PostgreSQL responses, and local Ollama summarization into one repeatable team workflow.",
+      "Connects scheduled Slack conversations, persistent PostgreSQL responses, and local Ollama summarization into one repeatable workflow.",
     technologies: ["Python", "FastAPI", "Slack API", "PostgreSQL", "Ollama"],
-    flow: ["DM prompt", "Replies", "AI summary", "Team channel"],
+    flow: ["Prompt", "Replies", "Summary", "Channel"],
     github: "https://github.com/Psanjay-15/Slack_Bot",
-    accent: "pink",
-  },
-];
-
-export const githubProjects = [
-  {
-    title: "Semantic Audio Search",
-    language: "Python",
-    description:
-      "Makes audio searchable with natural language by combining semantic embeddings with vector retrieval.",
-    github: "https://github.com/Psanjay-15/Audio",
-  },
-  {
-    title: "ToursPlanner",
-    language: "TypeScript",
-    description:
-      "A complete tour-booking experience with secure authentication, itinerary discovery, and Razorpay payments.",
-    github: "https://github.com/Psanjay-15/ToursPlanner",
   },
 ];

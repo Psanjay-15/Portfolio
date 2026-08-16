@@ -10,7 +10,6 @@ import styled from "styled-components";
 
 const SiteShell = styled.div`
   position: relative;
-  overflow: hidden;
 `;
 
 const SkipLink = styled.a`
@@ -19,9 +18,9 @@ const SkipLink = styled.a`
   left: 22px;
   z-index: 1000;
   padding: 12px 18px;
-  color: white;
-  background: var(--blue);
-  border-radius: 999px;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 8px;
   font-weight: 700;
   &:focus {
     top: 20px;
